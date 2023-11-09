@@ -1,131 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neelam-Developer portfolio</title>
-    <link rel="preconnect":  href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="aboutus.html">
-    <link rel="stylesheet" href="contact.html">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculater</title>
+    </head>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
+        .calculator {
+          width: 300px;
+          margin: 0 auto;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          background-color: #f5f5f5;
         }
-        body{
-            background-color: rgb(21, 21, 106)
-            color: white;
+        input[type="text"] {
+          width: 100%;
+          margin-bottom: 10px;
+          padding: 10px;
         }
-        nav{
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height:60px;
-            background-color:rgba(28, 28, 113, 0.655)
+        button {
+          width: 50px;
+          height: 50px;
+          margin: 5px;
+          font-size: 20px;
         }
-        nav ul{
-             display: flex;
-             justify-content: center;
+      </style>
+    </head>
+    <body>
+      <div class="calculator">
+        <input type="text" id="display" readonly>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button onclick="appendToDisplay('+')">+</button>
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button onclick="appendToDisplay('-')">-</button>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button onclick="appendToDisplay('*')">*</button>
+        <button onclick="appendToDisplay('0')">0</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="appendToDisplay('/')">/</button>
+      </div>
+    
+      <script>
+        function clearDisplay() {
+          document.getElementById('display').value = '';
         }
-        nav ul li{
-            list-style: none;
-            margin: 0 23px;
+    
+        function appendToDisplay(value) {
+          document.getElementById('display').value += value;
         }
-        nav ul li a{
-            text-decoration: none;
-            color:white;
+    
+        function calculate() {
+          const display = document.getElementById('display');
+          try {
+            display.value = eval(display.value);
+          } catch (error) {
+            display.value = 'Error';
+          }
         }
-        nav ul li a:hover{
-            color:rgb(160, 160, 244);
-            font-size: 1.01rem;
-        }
-        .firstsection{
-            display: flex;
-            justify-content:space-around;
-            margin: 23px 0;
-            margin: 50px 0;
-        }
-        .leftsection{
-            font-size: 3rem;
-            margin: 70px 0;
-            
-        }
-        .firstsection > div{
-            width: 30%;
-        }
-        .rightsection img{
-            width: 100%;
-            margin: 9px 0;
-  height: 450px;
-        }
-        .purple{
-            color: rgb(135, 41, 223);
-        }
-        #element{
-            color: rgb(132, 132, 238);
-        }
-        
-    </style>
-</head>
-
-<body>
-    <header>
-        <nav>
-            <div class="left"> Portfolio</div>
-            <div class="right"></div>
-            <ul>
-                <li><a href="/"><li>Home</a></li>
-                <li><a href="/"><li>aboutus</a></li>
-                <li><a href="/"><li>Services</a></li>
-                <li><a href="/"><li>Projects</a></li>
-                <li><a href="/"><li>Contactus</a></li>
-            </ul>
-
-        </nav>
-    </header>
-    <main>
-        <section class="firstsection">
-            <div class="leftsection">
-            Hey,my name is <span class="purple">Neelam</span>
-            <div>and i am a Passionate</div>
-            <span id="element"></span>
-            </div>
-            <div class="rightsection">
-                <img src="web image.jpg" alt="img">
-            </div>
-           
-        
-
-        </section>
-
-    </main>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script>
-        var typed = new Typed('#element', {
-          strings: ['Web Developer','Video Editor','Web Deginer'],
-          typeSpeed: 50,
-        });
       </script>
-       <h1>Contact Us</h1>
-       <div class="hero">
-           <div class="input-group">
-           <label for="name">Name:</label>
-           <input type="text" id="name" name="name"><br>
-        </div>
-        <div class="hero">
-           <div class="input-group">
-           <br <label for="age">Age:</label>
-           <input type="number" id="age" name="age"><br> 
-        </div>
-        <div class="hero">
-           <div class="input-group">
-               <br <label for="email">Email:</label>
-               <input type="email" id="email" name="email"><br>
-        </div>
-        <div class="hero">
-           <div class="input-group">
-               <br> <label for="Message">Message:</label>
-               <textarea id="Message" name="Message"></textarea><br>
-</html>
+    </body>
+    </html>
+    <body>
+       
+        
